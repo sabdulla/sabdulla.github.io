@@ -19,8 +19,12 @@
     <main>
         <h1>Blog Posts</h1>
         <ul>
-            <!-- Add links to your blog posts here -->
-            <li><a href="_posts/2024-06-23-first-post.html">First Post</a></li>
+            {% for post in site.posts %}
+                <li>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    <small>{{ post.date | date: "%B %d, %Y" }}</small>
+                </li>
+            {% endfor %}
         </ul>
     </main>
 </body>
